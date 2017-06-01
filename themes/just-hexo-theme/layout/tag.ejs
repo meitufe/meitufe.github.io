@@ -1,0 +1,37 @@
+<%- partial('partial/header') %>
+
+<header class="main-header no-cover">
+    <%- partial('partial/navigator') %>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">标签：<%= page.tag %></h1>
+        </div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+</header>
+<main class="content" role="main">
+    <div class="post">
+        <p class="tags">
+            <% site.tags.map(function(tag) { %>
+                <a href="#<%= tag.name %>" title="<%= tag.name %>" rel="<%= tag.length %>"><%= tag.name %></a>
+            <% }); %>
+        </p>
+
+        <% site.tags.map(function(tag) { %>
+        <div>
+            <span class="fa fa-tag listing-seperator" id="<%= tag.name %>">
+                <span class="tag-text"><%= tag.name %></span>
+            </span>
+            <% tag.posts.map(function(post){ %>
+            <header class="post-header">
+                <h2 class="post-title">
+                    <a href="<%= theme.url %><%= post.path %>"><%- post.title || 'Untitled' %></a>
+                </h2>
+            </header>
+        </div>
+        <% }); %>
+        <% }); %>
+    </div>
+</main>
+
+<%- partial('partial/footer') %>

@@ -1,0 +1,30 @@
+{
+  "name": "just-hexo-theme",
+  "version": "1.0.0",
+  "description": "A hexo theme inspired by ghost default theme.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "gulp sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pinggod/JustClear.github.io"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "just"
+  ],
+  "author": "Sean Sun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pinggod/JustClear.github.io/issues"
+  },
+  "homepage": "https://github.com/pinggod/JustClear.github.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0"
+  }
+}
