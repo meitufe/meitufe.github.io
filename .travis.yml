@@ -1,0 +1,33 @@
+language: node_js
+
+node_js:
+  - '4'
+
+branches:
+  only:
+    - write
+
+addons:
+  ssh_known_hosts:
+    - 192.30.253.112
+
+cache:
+  directories:
+    - node_modules
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_6eeff3af3bb3_key -iv $encrypted_6eeff3af3bb3_iv -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+  - chmod 600 ~/.ssh/id_rsa
+  - eval $(ssh-agent)
+  - ssh-add ~/.ssh/id_rsa
+  - cp .travis/ssh_config ~/.ssh/config
+  - git config --global user.name 'JustClear'
+  - git config --global user.email 576839360@qq.com
+
+install:
+  - npm install hexo-cli -g
+  - npm install hexo-deployer-git --save
+  - npm install
+
+script:
+  - hexo clean && hexo g -d
