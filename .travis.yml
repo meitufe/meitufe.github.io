@@ -30,5 +30,7 @@ install:
   - npm install
 
 script:
-  - echo fe.meitu.com > publish/CNAME
+  # - echo fe.meitu.com > publish/CNAME
   - hexo clean && hexo g -d
+  - pwd
+  - ls
