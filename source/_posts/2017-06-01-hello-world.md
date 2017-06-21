@@ -4,13 +4,13 @@ title: Hello World
 
 ## 发布文章教程
 
-1. `clone https://github.com/meitufe/meitufe.github.io.git meitufe.github.io`
+1. `fork` 并 `clone` 这个仓库 `https://github.com/meitufe/meitufe.github.io.git`
 2. 拉取远程 `write` 分支
 3. 切换到 `write` 分支（重要！！！）
 4. 切换到 `write` 分支（重要！！！）
 5. 切换到 `write` 分支（重要！！！）
 6. 打开 `srouce/_posts/` 文件夹
-7. 新建文章内容（文件格式为 `:year-:month-:day-:title.md`）
+7. 新建文章内容（文件格式为 `${year}-${month}-${day}-${title}.md`）
 8. 内容格式为：
     ```markdown
     ---

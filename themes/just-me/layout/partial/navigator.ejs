@@ -1,0 +1,11 @@
+
+<% if (is_home()) { %>
+<nav class="main-nav overlay clearfix">
+<% } else {%>
+<nav class="main-nav clearfix">
+<% } %>
+    <a class="blog-logo" href="<%= config.url %>">
+        <img src="/images/logo.jpg" alt="<%= page.title %>">
+    </a>
+    <!-- <a href="javascript:;" class="menu-button icon-menu js-menu-button"></a> -->
+</nav>

@@ -30,4 +30,7 @@ install:
   - npm install
 
 script:
-  - hexo clean && hexo g -d
+  - hexo clean
+  - hexo generate
+  - echo fe.meitu.com > public/CNAME
+  - hexo deploy

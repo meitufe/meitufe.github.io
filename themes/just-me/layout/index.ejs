@@ -1,0 +1,48 @@
+<%- partial('partial/header') %>
+<header class="main-header no-cover">
+    <%- partial('partial/navigator') %>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title"><%= theme.title %></h1>
+            <h2 class="page-description"><%= theme.description %></h2>
+        </div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+</header>
+<main class="content" role="main">
+    <div class="extra-pagination inner">
+        <nav class="pagination" role="navigation">
+            <span class="page-number">Page 1 of 2</span>
+            <a class="older-posts" href="/page/2/">Older Posts <span aria-hidden="true">&rarr;</span></a>
+        </nav>
+    </div>
+
+    <% page.posts.each(function(post) { %>
+    <article class="post">
+        <header class="post-header">
+            <h2 class="post-title">
+                <a href="<%= theme.url %><%= post.path %>"><%= post.title %></a>
+            </h2>
+        </header>
+        <section class="post-excerpt">
+             <%- truncate(strip_html(post.content), {length: 200, omission: '...'}) %>...
+        </section>
+        <footer class="post-meta">
+            <span><%= config.author %></span>
+            <time class="post-date" datetime="<%- date(page.date) %>"><%- date(post.date) %></time>
+        </footer>
+    </article>
+    <% }); %>
+
+    <nav class="pagination" role="navigation">
+        <span class="page-number">Page <%= page.current %> of <%= page.total %></span>
+        <% if (page.prev){ %>
+            <a class="newer-posts" href="<%= config.url %>/<%= page.prev_link %>"><span aria-hidden="true">←</span> 上一页</a>
+        <% } %>
+        <% if (page.next){ %>
+            <a class="older-posts" href="<%= config.url %>/<%= page.next_link %>">下一页 <span aria-hidden="true">→</span></a>
+        <% } %>
+    </nav>
+</main>
+
+<%- partial('partial/footer') %>
