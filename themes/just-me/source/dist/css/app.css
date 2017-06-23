@@ -2240,20 +2240,20 @@ pre .xml .css,
 pre .xml .cdata {
     opacity: 0.5
 }
-
 /* Github */
 .gist table {
     margin: 0;
     font-size: 1.4rem;
     text-rendering: auto;
 }
+
 .gist td {
     line-height: 1.4;
 }
+
 .gist .line-number {
     min-width: 25px;
 }
-
 /* Pastebin */
 .content .embedPastebin {
     margin-bottom: 1.75em;
@@ -2268,7 +2268,12 @@ pre .xml .cdata {
     background: #fff;
     visibility: hidden;
     z-index: 99;
+
     &.visible {
         visibility: visible;
     }
+}
+
+div[node-type="is-icp"] {
+    display: none;
 }
