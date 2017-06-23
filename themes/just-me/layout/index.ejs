@@ -25,7 +25,7 @@
             </h2>
         </header>
         <section class="post-excerpt">
-             <%- truncate(strip_html(post.content), {length: 200, omission: '...'}) %>...
+             <%- truncate(strip_html(post.content), {length: 200, omission: '...'}) %><a href="<%= theme.url %><%= post.path %>">查看完整文章</a>
         </section>
         <footer class="post-meta">
             <span><%= config.author %></span>
