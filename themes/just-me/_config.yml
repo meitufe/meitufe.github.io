@@ -1,20 +1,22 @@
 menu:
-    Blog: /
-    Archive: /archives/
-    GitHub: https://github.com/meitufe
-    Rss: /atom.xml
+    blog: /
+    archive: /archives/
+    gitHub: https://github.com/meitufe
+    rss: /atom.xml
 
 favicon: /favicon.png
 logo: /favicon.png
+title: Meitu FE
+description: ''
+url: http://meitufe.github.io/
+cover:
+    home:
+    archive:
 
 # Comment
 # e.g disqus: seansun
 disqus:
 duoshuo:
-
-# Analytics
-# google-analytics:
-ga: UA-65933410-1
 
 # Copyright Infomation
 startyear: 2017
