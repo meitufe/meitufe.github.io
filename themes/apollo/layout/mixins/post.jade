@@ -2,7 +2,7 @@ mixin postInfo(item)
     .post-info
         span.date
             != full_date(item.date, 'll')
-        if item.author
+        if item.author && (!is_archive())
             span.author
                 != item.author
         if item.from && (is_home() || is_post())
