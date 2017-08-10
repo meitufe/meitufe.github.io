@@ -3,7 +3,8 @@ mixin postInfo(item)
         span.date
             != full_date(item.date, 'll')
         if item.author
-            span.author != item.author
+            span.author
+                != item.author
         if item.from && (is_home() || is_post())
             a.post-from(href=item.from target="_blank" title=item.from) 翻译 · 原文地址
 
