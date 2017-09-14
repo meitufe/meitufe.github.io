@@ -27,6 +27,10 @@ code {
 .text-center {
   text-align: center; }
 
+.inline-image {
+  display: inline-block !important;
+  margin: 0 !important; }
+
 .nav {
   position: relative;
   height: 80px; }
