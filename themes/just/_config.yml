@@ -1,0 +1,12 @@
+menus:
+    HOME: /
+    # ARCHIVE: /archives/
+    GITHUB: https://github.com/meitufe
+    # ABOUT: /about/
+
+favicon: /favicon.png
+logo: /images/logo.jpg
+title: MEITU FE
+description: ''
+url: http://fe.meitu.com/
+startyear: 2017

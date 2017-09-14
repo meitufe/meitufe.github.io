@@ -1,0 +1,35 @@
+.nav {
+    position: relative;
+    height: $nav-height;
+
+    .logo {
+        float: left;
+        width: $logo-size;
+        height: $logo-size;
+        background: #fafcfb;
+        margin: ($nav-height - $logo-size) / 2 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .menu {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        float: right;
+        height: $nav-height;
+        line-height: $nav-height;
+
+        li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        a {
+            font-weight: bold;
+        }
+    }
+}

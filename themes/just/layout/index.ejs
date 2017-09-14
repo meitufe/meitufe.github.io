@@ -1,0 +1,27 @@
+<%- partial('partial/head') %>
+<%- partial('partial/header') %>
+
+<div class="page-content">
+    <div class="container">
+        <% page.posts.each(function(post) { %>
+        <article class="article">
+            <header class="article-header">
+                <h2 class="article-title">
+                    <a href="<%= theme.url %><%= post.path %>"><%= post.title %></a>
+                </h2>
+            </header>
+            <section class="article-excerpt">
+                 <p><%= post.excerpts %> ...</p>
+            </section>
+            <footer class="article-meta">
+                <span><%= post.author || config.author %></span>
+                <span>publish at</span>
+                <time class="article-date" datetime="<%- date(page.date) %>"><%- date(post.date) %></time>
+            </footer>
+        </article>
+        <% }); %>
+    </div>
+</div>
+
+<%- partial('partial/footer') %>
+<%- partial('partial/foot') %>

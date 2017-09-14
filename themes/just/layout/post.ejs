@@ -1,0 +1,26 @@
+<%- partial('partial/head') %>
+<%- partial('partial/header') %>
+
+<div class="page-content">
+    <div class="container">
+        <article class="article">
+            <header class="article-header">
+                <h1 class="article-title"><%= page.title %></h1>
+                <div class="article-meta">
+                    <span><%= page.author || config.author %></span>
+                    <span>publish at</span>
+                    <time class="article-date" datetime="<%- date(page.date) %>"><%- date(page.date) %></time>
+                </div>
+            </header>
+            <section class="article-content">
+                 <%- page.content %>
+            </section>
+            <footer class="article-meta">
+                <!--  -->
+            </footer>
+        </article>
+    </div>
+</div>
+
+<%- partial('partial/footer') %>
+<%- partial('partial/foot') %>
