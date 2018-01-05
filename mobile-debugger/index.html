@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+            移动端网页调试 - Meitu FE
+        
+    </title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/dist/css/github-gist.css">
+    <link rel="stylesheet" href="/dist/css/app.css">
+</head>
+
+
+<body data-page="article">
+
+
+<header class="header">
+    <nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="http://fe.meitu.com">
+                    <img src="/images/logo.png" alt="Meitu FE">
+                </a>
+            </div>
+            <ul class="menu">
+                
+                <li><a href="/">HOME</a></li>
+                
+                <li><a href="https://github.com/meitufe">GITHUB</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<div class="page-content">
+    <div class="container">
+        <article class="article">
+            <header class="article-header">
+                <h1 class="article-title">移动端网页调试</h1>
+                <div class="article-meta">
+                    <span>lcat</span>
+                    <span>publish at</span>
+                    <time class="article-date" datetime="2017-12-31">2017-12-31</time>
+                </div>
+            </header>
+            <section class="article-content">
+                 <h3 id="chrome-模拟器"><a href="#chrome-模拟器" class="headerlink" title="chrome 模拟器"></a>chrome 模拟器</h3><blockquote>
+<p>非真机调试，开发期用来调试逻辑、ui适配、性能排查等。</p>
+</blockquote>
+<ol>
+<li>pc chrome打开要调试页面</li>
+<li>打开chrome DevTools </li>
+<li>选择 <code>toggle device toolbar</code></li>
+</ol>
+<p><img src="/images/mobile-debugger/41.png" alt=""></p>
+<h3 id="安卓-chrome-浏览器调试"><a href="#安卓-chrome-浏览器调试" class="headerlink" title="安卓 chrome 浏览器调试"></a>安卓 chrome 浏览器调试</h3><blockquote>
+<p>安卓 &gt;= 4.0 支持。可能需要翻墙。能在 <code>chrome</code> 重现的，都建议在 <code>chrome</code> 调试。</p>
+</blockquote>
+<ol>
+<li>安卓打开 <code>chrome</code></li>
+<li>安卓设置里打开USB调试，手机连接电脑，电脑安装手机驱动</li>
+<li>pc <code>chrome</code> 打开 <code>chrome://inspect</code></li>
+<li>勾选☑️ <code>Discover USB devices</code> </li>
+<li>点击 <code>inspect</code> 调试</li>
+</ol>
+<p><img src="/images/mobile-debugger/21.jpg" alt=""></p>
+<h3 id="安卓-webview-调试"><a href="#安卓-webview-调试" class="headerlink" title="安卓 webview 调试"></a>安卓 webview 调试</h3><blockquote>
+<p>安卓 &gt;= 4.4 支持。可能需要翻墙。</p>
+</blockquote>
+<ol>
+<li>客户端需要开启webview debugger，<a href="https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews?hl=zh-cn" target="_blank" rel="noopener">设置方法</a></li>
+<li>同上 <code>安卓 chrome 浏览器调试</code> 一致</li>
+</ol>
+<h3 id="安卓-x5-内核（微信、QQ-等）"><a href="#安卓-x5-内核（微信、QQ-等）" class="headerlink" title="安卓 x5 内核（微信、QQ 等）"></a>安卓 x5 内核（微信、QQ 等）</h3><blockquote>
+<p>接入 x5 内核的 APP 理论上都可以调试</p>
+</blockquote>
+<ol>
+<li><a href="http://bbs.mb.qq.com/thread-1416936-1-1.html" target="_blank" rel="noopener">下载</a>安装 <code>TBS Studio</code></li>
+<li>连接手机，允许USB调试</li>
+<li>打开要调试的页面</li>
+<li>检测是否支持 TBS </li>
+<li>设定 TBS 调试状态</li>
+<li>启动检测</li>
+</ol>
+<h3 id="ios-safari-浏览器调试"><a href="#ios-safari-浏览器调试" class="headerlink" title="ios safari 浏览器调试"></a>ios safari 浏览器调试</h3><ol>
+<li>ios 设置 -&gt; safari -&gt; 高级 -&gt; ☑️web检查器</li>
+<li>pc safari 偏好设置 -&gt; 高级 -&gt; ☑️在菜单栏中显示<code>开发</code>菜单</li>
+<li>ios 连接电脑</li>
+<li>ios safari 打开要调试的页面</li>
+<li>pc safari 开发 -&gt; ios设备名 -&gt; 选择要调试的页面</li>
+</ol>
+<h3 id="ios-webview"><a href="#ios-webview" class="headerlink" title="ios webview"></a>ios webview</h3><ol>
+<li>ios有签名校验机制，正式包不允许 safari 调试，所以必须是测试带签名的包</li>
+<li>其他操作同上👆</li>
+</ol>
+<h3 id="ios-webkit-debug-proxy"><a href="#ios-webkit-debug-proxy" class="headerlink" title="ios-webkit-debug-proxy"></a><a href="https://github.com/google/ios-webkit-debug-proxy" target="_blank" rel="noopener">ios-webkit-debug-proxy</a></h3><blockquote>
+<p>目前只支持UIWebViews 不支持wkwebview</p>
+</blockquote>
+<h3 id="remotedebug-ios-webkit-adapter"><a href="#remotedebug-ios-webkit-adapter" class="headerlink" title="remotedebug-ios-webkit-adapter"></a><a href="https://github.com/RemoteDebug/remotedebug-ios-webkit-adapter" target="_blank" rel="noopener">remotedebug-ios-webkit-adapter</a></h3><blockquote>
+<p>基于 <code>ios-webkit-debug-proxy</code> 构建</p>
+</blockquote>
+<h3 id="vConsole"><a href="#vConsole" class="headerlink" title="vConsole"></a>vConsole</h3><blockquote>
+<p>一个轻量、可拓展、针对手机网页的前端开发者调试面板。查看是否报错，查看网络请求，cookie localstorage，执行js脚本</p>
+</blockquote>
+<ol>
+<li>$ npm i vconsole –save</li>
+<li>引入 <code>vconsole.js</code> </li>
+<li>初始化 var vConsole = new VConsole();</li>
+</ol>
+<p><img src="/images/mobile-debugger/31.png" alt=""></p>
+<h3 id="spy-debugger"><a href="#spy-debugger" class="headerlink" title="spy-debugger"></a>spy-debugger</h3><blockquote>
+<p>封装了 <code>weinre</code> <code>node-mitmproxy</code> <code>AnyProxy</code>。不能断点</p>
+</blockquote>
+<ol>
+<li>$ npm i spy-debugger -g</li>
+<li>手机跟pc连接同一个wifi</li>
+<li>$ spy-debugger</li>
+<li>手机设置代理</li>
+<li>手机访问 <code>http://s.xxx</code> 安装证书（用于https）</li>
+</ol>
+<h3 id="charles、fiddle抓包（终极武器）"><a href="#charles、fiddle抓包（终极武器）" class="headerlink" title="charles、fiddle抓包（终极武器）"></a>charles、fiddle抓包（终极武器）</h3><blockquote>
+<p>抓取请求resq resp; map remote 替换线上资源文件调试</p>
+</blockquote>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/remote-debugging/?hl=zh-cn" target="_blank" rel="noopener">远程调试 Android 设备使用入门 – by Google</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews?hl=zh-cn" target="_blank" rel="noopener">远程调试 WebView – by Google</a></li>
+<li><a href="https://github.com/jieyou/remote_inspect_web_on_real_device" target="_blank" rel="noopener">各种 真机远程调试 方法 汇总</a></li>
+<li><a href="https://medium.com/@auchenberg/hello-remotedebug-ios-webkit-adapter-debug-safari-and-ios-webviews-from-anywhere-2a8553df7465" target="_blank" rel="noopener">Hello RemoteDebug iOS WebKit Adapter: Debug Safari and iOS WebViews from anywhere 📡📱</a></li>
+<li><a href="https://www.w3ctech.com/topic/2034" target="_blank" rel="noopener">RemoteDebug iOS Webkit Adapter（适配器）：一个可以让你（随时）随地调试Safari、 iOS WebView（的适配器） 📡📱</a></li>
+</ol>
+
+            </section>
+            <footer class="article-meta">
+                <!--  -->
+            </footer>
+        </article>
+    </div>
+</div>
+
+<footer class="footer text-center">
+    <div class="container">
+        <section class="copyright">
+            <a href="http://fe.meitu.com/">MEITU FE</a>
+            <span>&copy; 2017</span>
+        </section>
+    </div>
+</footer>
+
+    <script src="/dist/js/highlight.pack.js"></script>
+    <script src="/dist/js/app.js"></script>
+</body>
+</html>
+
